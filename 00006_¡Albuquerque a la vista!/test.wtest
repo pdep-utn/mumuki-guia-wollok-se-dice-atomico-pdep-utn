@@ -62,5 +62,5 @@ test "existe albuquerque" {
 }
 
 test "albuquerque entiende produccionEnergetica" {
-  albuquerque.produccionEnergetica()
+  assert.equals(2000000*150, albuquerque.produccionEnergetica())
 }
