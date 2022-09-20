@@ -65,18 +65,19 @@ test "albuquerque entiende produccionEnergetica" {
   albuquerque.produccionEnergetica()
 }
 
+
 test "existe laRegion" {
   laRegion
 }
 
-test "laRegion entiende principalCiudadProductora" {
+test "la principal ciudad productora de la region" {
   laRegion.agregarCiudad(springfield)
   laRegion.agregarCiudad(albuquerque)
-  laRegion.principalCiudadProductora()
+  assert.equals(albuquerque, laRegion.principalCiudadProductora())
 }
 
-test "laRegion entiende principalesCentrales" {
+test "la central que mas energia produce de cada ciudad de la region" {
   laRegion.agregarCiudad(springfield)
   laRegion.agregarCiudad(albuquerque)
-  laRegion.principalesCentrales()
+  assert.equals([centralCarbon,centralHidroelectrica], laRegion.principalesCentrales())
 }
